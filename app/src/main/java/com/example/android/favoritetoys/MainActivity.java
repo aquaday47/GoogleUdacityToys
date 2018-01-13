@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
          */
         for (String toyName : toyNames) {
             mToysListTextView.append(toyName + "\n\n\n");
+            //just practiced apply changes for instant blah da dee dah
+            // mToysListTextView.append("\n ha");
         }
     }
 }
