@@ -22,10 +22,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // TODO (26) Create an EditText variable called mSearchBoxEditText
     private EditText mSearchBoxEditText;
-
     private TextView mUrlDisplayTextView;
-
     private TextView mSearchResultsTextView;
 
     @Override
