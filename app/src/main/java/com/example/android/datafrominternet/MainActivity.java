@@ -15,14 +15,20 @@
  */
 package com.example.android.datafrominternet;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.widget.Toast.makeText;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO (26) Create an EditText variable called mSearchBoxEditText
+
     private EditText mSearchBoxEditText;
     private TextView mUrlDisplayTextView;
     private TextView mSearchResultsTextView;
@@ -36,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
         mUrlDisplayTextView = (TextView) findViewById(R.id.tv_url_display);
         mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     // Do 2 - 7 in menu.xml ///////////////////////////////////////////////////////////////////////
@@ -51,6 +62,18 @@ public class MainActivity extends AppCompatActivity {
     // TODO (8) Override onCreateOptionsMenu
     // TODO (9) Within onCreateOptionsMenu, use getMenuInflater().inflate to inflate the menu
     // TODO (10) Return true to display your menu
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int menuItemSelected = item.getItemId();
+        if (menuItemSelected == R.id.action_search){
+            Context context = MainActivity.this;
+            String message = "search clicked";
+            makeText(context, message, Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     // TODO (11) Override onOptionsItemSelected
     // TODO (12) Within onOptionsItemSelected, get the ID of the item that was selected
