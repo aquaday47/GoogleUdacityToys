@@ -15,4 +15,5 @@
 -->
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="default_string">Default String</string>
 </resources>
