@@ -19,4 +19,5 @@
     <string name="error_message">
         Failed to get results. Please try again.
     </string>
+    <string name="error_blank">Nothing entered in search box. try again</string>
 </resources>
