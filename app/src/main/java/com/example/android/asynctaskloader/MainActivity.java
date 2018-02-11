@@ -153,8 +153,9 @@ implements LoaderManager.LoaderCallbacks<String> {
         mLoadingIndicator.setVisibility(View.INVISIBLE);
         // TODO (15) Use the same logic used in onPostExecute to show the data or the error message
         if (data != null && !data.equals("")) {
-            showJsonDataView();
+
             mSearchResultsTextView.setText(data);
+            showJsonDataView();
         } else {
                 showErrorMessage();
                 }
@@ -212,8 +213,9 @@ implements LoaderManager.LoaderCallbacks<String> {
                     return NetworkUtils.getResponseFromHttpUrl(searchURL);
                 } catch (IOException e) {
                     e.printStackTrace();
+                    return null;
                 }
-                return null;
+
             }
 
         };
