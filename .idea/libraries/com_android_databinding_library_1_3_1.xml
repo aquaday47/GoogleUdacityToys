@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.android.databinding:library-1.3.1">
+    <CLASSES>
+      <root url="file://Q:/aaron/Android/.android/build-cache/df0e94dde2fd8edd7f1f90286ec1fa3d891dcfd0/output/res" />
+      <root url="jar://Q:/aaron/Android/.android/build-cache/df0e94dde2fd8edd7f1f90286ec1fa3d891dcfd0/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://Q:/aaron/Android/Sdk/extras/android/m2repository/com/android/databinding/library/1.3.1/library-1.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://Q:/aaron/Android/Sdk/extras/android/m2repository/com/android/databinding/library/1.3.1/library-1.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
