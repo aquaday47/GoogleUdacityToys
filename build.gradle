@@ -14,10 +14,7 @@ buildscript {
 
 allprojects {
     String osName = System.getProperty("os.name").toLowerCase();
-    if (osName.contains("windows")) {
-        buildDir = "C:/tmp/${rootProject.name}/${project.name}"
-    }
-    repositories {
+       repositories {
         jcenter()
         maven {
             url "https://maven.google.com"
