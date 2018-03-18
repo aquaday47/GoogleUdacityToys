@@ -28,6 +28,7 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Action;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 
 import com.example.android.background.MainActivity;
 import com.example.android.background.R;
@@ -39,7 +40,7 @@ import com.example.android.background.sync.WaterReminderIntentService;
  * Utility class for creating hydration notifications
  */
 public class NotificationUtils {
-
+    public static final String TAG = NotificationUtils.class.getSimpleName();
     /*
      * This notification ID can be used to access our notification after we've displayed it. This
      * can be handy when we need to cancel the notification, or perhaps update it. This number is
@@ -92,6 +93,7 @@ public class NotificationUtils {
             notificationBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
         }
         notificationManager.notify(WATER_REMINDER_NOTIFICATION_ID, notificationBuilder.build());
+        Log.d(TAG, "exiting builder for notification (Udacity)");
     }
     private static Action ignoreReminderAction(Context context) {
         Intent ignoreReminderIntent = new Intent(context, WaterReminderIntentService.class);

@@ -20,12 +20,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.background.sync.ReminderTasks;
+import com.example.android.background.sync.ReminderUtilities;
 import com.example.android.background.sync.WaterReminderIntentService;
 import com.example.android.background.utilities.NotificationUtils;
 import com.example.android.background.utilities.PreferenceUtilities;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements
     private TextView mWaterCountDisplay;
     private TextView mChargingCountDisplay;
     private ImageView mChargingImageView;
-
+    public static final String DEBUG_MAIN_TAG = MainActivity.class.getSimpleName();
     private Toast mToast;
 
     @Override
@@ -54,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements
         updateChargingReminderCount();
 
         // TODO (23) Schedule the charging reminder
-
+        ReminderUtilities.scheduleChargingReminder(this);
+        Log.d(DEBUG_MAIN_TAG, "out of call to utility.scheduleReminder");
         /** Setup the shared preference listener **/
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
@@ -95,9 +98,7 @@ public class MainActivity extends AppCompatActivity implements
 
     // TODO (24) Remove the button and testNotification code
     
-    public void testNotification(View view) {
-        NotificationUtils.remindUserBecauseCharging(this);
-    }
+
 
     @Override
     protected void onDestroy() {
