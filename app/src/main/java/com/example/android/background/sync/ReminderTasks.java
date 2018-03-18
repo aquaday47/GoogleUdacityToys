@@ -34,7 +34,7 @@ public class ReminderTasks {
         } else if (ACTION_DISMISS_NOTIFICATION.equals(action)) {
             NotificationUtils.clearAllNotifications(context);
         } else if (ACTION_CHARGING_NOTIFICS.equals(action)){
-
+            notifyOnCharge(context);
         }
     }
 
